@@ -1,61 +1,87 @@
 const negate = a => {
-  // your code here
+  return !a;
 };
 
 const both = (a, b) => {
-  // your code here
+  return a&&b;
 };
 
 const either = (a, b) => {
-  // your code here
+  return a || b;
 };
 
 const none = (a, b) => {
-  // your code here
+    if(a === false && b === false) {
+	return true;
+  } else {
+	return false;
+ } 
 };
 
 const one = (a, b) => {
-  // your code here
+    if(a === true && b === false || b === true && a === false) {
+	return true;
+  } else {
+	return false;
+ }
 };
 
 const truthiness = a => {
-  // your code here
+	return !!a;
 };
 
 const isEqual = (a, b) => {
-  // your code here
+  return a===b;
 };
 
 const isGreaterThan = (a, b) => {
-  // your code here
+  return a > b;
 };
 
 const isLessThanOrEqualTo = (a, b) => {
-  // your code here
+  return a <= b;
 };
 
 const isOdd = a => {
-  // your code here
+	if (a%2 === 1) {
+	return true;
+   } else { 
+	return false;
+ };
 };
 
 const isEven = a => {
-  // your code here
+  	if (a%2 === 0) {
+	return true;
+   } else { 
+	return false;
+ };
 };
 
 const isSquare = a => {
-  // your code here
+	return a >= 0 && Math.sqrt(a)%1 === 0;
 };
 
 const startsWith = (char, string) => {
-  // your code here
+  if (char === string.charAt(0)) {
+	return true;
+  } else {
+	return false;
+ };
 };
 
 const containsVowels = string => {
-  // your code here
+const regex = /[aeoui]/gi;
+	return regex.test(string);
 };
 
 const isLowerCase = string => {
-  // your code here
+const regex = /[A-Z]/g;
+	if (regex.test(string)) {
+	return false;
+  } else {
+   return true;
+ }
 };
 
 module.exports = {
