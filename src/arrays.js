@@ -1,61 +1,84 @@
 const getNthElement = (index, array) => {
-  // your code here
+  return array[index%array.length];
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  return array.toString();
 };
 
 const csvStringToArray = string => {
-  // your code here
+  return string.split(",");
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  const newArray = array.concat([]);
+  newArray.push(element);
+  return newArray;
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  return numbers.map(number => number.toString());
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  return strings.map(string => string.toUpperCase());
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  return strings.map(string => string.split("").reverse().join(""));
 };
 
 const onlyEven = numbers => {
-  // your code here
+  return numbers.filter(number => number%2 === 0);
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  return [...array.slice(0, index), ...array.slice(index + 1)];
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  const regExStr = /[aouie]/gi;
+  const newStrings = [];
+  strings.forEach(string => {
+    if (regExStr.exec(string[0])) {
+      newStrings.push(string);
+    }
+  });
+  return newStrings;
 };
 
 const removeSpaces = string => {
-  // your code here
+  const arr = string.split('');
+  const nospace = arr.filter(item => item !== ' ');
+  return nospace.join('');
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  return numbers.reduce((n1,n2) => n1 + n2, 0);
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  const sorted = strings.sort(function(a,b) {
+  const lastA = a.charAt(a.length - 1);
+  const lastB = b.charAt(b.length - 1);
+  if (lastA > lastB) {
+    return 1;
+  } else if (lastA < lastB) {
+    return -1;
+  } else {
+    return 0;
+  } 
+});
+
+  return sorted;
 };
 
 module.exports = {
